@@ -1,11 +1,10 @@
-'use client';
-
 import HeaderComponent from '@/components/HeaderComponent';
 import styles from '@/styles/header.module.scss';
 import Link from 'next/link';
+import React, { FC } from 'react';
 import { SlActionRedo, SlBubbles, SlLayers } from 'react-icons/sl';
 
-export default function Home() {
+const About: FC = () => {
   return (
     <>
       <HeaderComponent
@@ -21,7 +20,9 @@ export default function Home() {
           </Link>,
         ]}
       />
-      <main>테스트</main>
+      <main>서비스 소개입니다</main>
     </>
   );
-}
+};
+
+export default About;
