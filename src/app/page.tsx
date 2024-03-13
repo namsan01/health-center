@@ -4,13 +4,30 @@ import { getInfoList } from '@/apis/api';
 import HeaderComponent from '@/components/common/HeaderComponent';
 import MapSection from '@/components/map/MapSection';
 import { useInfo } from '@/hooks/useInfo';
+import { useMap } from '@/hooks/useMap';
 import styles from '@/styles/header.module.scss';
 import { Info } from '@/types/info';
+import copy from 'copy-to-clipboard';
 import Link from 'next/link';
-import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+import { useCallback, useEffect } from 'react';
 import { SlActionRedo, SlBubbles, SlLayers } from 'react-icons/sl';
 
 export default function Home() {
+  // 라우터 활용
+  const router = useRouter();
+  const { getMapOption } = useMap();
+  // 현재 지도 좌표, zoom 정보 얻어오기
+  const copyAndSaveInfo = useCallback(() => {
+    const mapOptions = getMapOption();
+    // console.log(mapOptions);
+    const query = `/?zoom=${mapOptions.zoom}&lat=${mapOptions.center[0]}&lng=${mapOptions.center[1]}`;
+    router.push(query);
+
+    // query를 클립보드에 복사해서 보관
+    copy(query);
+  }, [router, getMapOption]);
+
   const { initializeInfo } = useInfo();
 
   // 페이지 준비가 되면 데이터 호출
@@ -33,9 +50,17 @@ export default function Home() {
     <>
       <HeaderComponent
         rightElements={[
-          <Link key={'share'} href={'/'} className={styles.box}>
+          <button
+            key="share"
+            className={styles.box}
+            onClick={() => {
+              // 현재 네이버의 좌표와 확대 비율을 보관해서 전달하도록 준비
+              copyAndSaveInfo();
+            }}
+          >
             <SlActionRedo />
-          </Link>,
+          </button>,
+
           <Link key={'feedback'} href={'/feedback'} className={styles.box}>
             <SlBubbles />
           </Link>,
