@@ -2,6 +2,7 @@
 import { CITY_KEY } from '@/hooks/useInfo';
 
 import { Info } from '@/types/info';
+
 import React from 'react';
 import useSWR from 'swr';
 import Marker from './Marker';
@@ -34,13 +35,6 @@ const Markers = () => {
     };
   };
 
-  // 기본 아이콘 객체
-  // const iconImg: ImageIcon = {
-  //   url: '/icon.png',
-  //   size: new naver.maps.Size(64, 64),
-  //   origin: new naver.maps.Point(0, 0),
-  //   scaledSize: new naver.maps.Size(30, 30),
-  // };
   return (
     <>
       {infos.map((item, index) => {
