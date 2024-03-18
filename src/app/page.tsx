@@ -12,6 +12,8 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useCallback, useEffect } from 'react';
 import { SlActionRedo, SlBubbles, SlLayers } from 'react-icons/sl';
+// Next.js 13버전이상 처리
+import { Suspense } from 'react';
 
 export default function Home() {
   // 라우터 활용
@@ -70,7 +72,10 @@ export default function Home() {
         ]}
       />
       <main style={{ width: '100%', height: '100%' }}>
-        <MapSection />
+        {/* Next.js 13 이상 버전 처리 */}
+        <Suspense fallback={<>Loading...</>}>
+          <MapSection />
+        </Suspense>
       </main>
     </>
   );
