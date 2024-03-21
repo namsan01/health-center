@@ -5,7 +5,7 @@ import { useFirebase } from '@/hooks/useFirebase';
 import styles from '@/styles/header.module.scss';
 import Link from 'next/link';
 import { PiSealCheck } from 'react-icons/pi';
-import { SlLayers } from 'react-icons/sl';
+import { SlActionRedo, SlBubbles, SlLayers } from 'react-icons/sl';
 import { useColletion } from '@/hooks/useCollection';
 import dayjs from 'dayjs';
 import { Timestamp } from 'firebase/firestore';
@@ -108,11 +108,13 @@ const Feedback = (): JSX.Element => {
     <>
       <HeaderComponent
         rightElements={[
-          <Link key="feedback" href="/feedback" className={styles.box}>
-            <PiSealCheck />
-          </Link>,
-          <Link key="about" href="/about" className={styles.box}>
+          <Link key={'about'} href={'/about'} className={styles.box}>
             <SlLayers />
+            서비스소개
+          </Link>,
+          <Link key={'feedback'} href={'/feedback'} className={styles.box}>
+            <SlBubbles />
+            피드백
           </Link>,
         ]}
       />

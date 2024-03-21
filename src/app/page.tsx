@@ -52,6 +52,14 @@ export default function Home() {
     <>
       <HeaderComponent
         rightElements={[
+          <Link key={'about'} href={'/about'} className={styles.box}>
+            <SlLayers />
+            서비스소개
+          </Link>,
+          <Link key={'feedback'} href={'/feedback'} className={styles.box}>
+            <SlBubbles />
+            피드백
+          </Link>,
           <button
             key="share"
             className={styles.box}
@@ -61,14 +69,8 @@ export default function Home() {
             }}
           >
             <SlActionRedo />
+            공유하기
           </button>,
-
-          <Link key={'feedback'} href={'/feedback'} className={styles.box}>
-            <SlBubbles />
-          </Link>,
-          <Link key={'about'} href={'/about'} className={styles.box}>
-            <SlLayers />
-          </Link>,
         ]}
       />
       <main style={{ width: '100%', height: '100%' }}>

@@ -2,17 +2,19 @@ import HeaderComponent from '@/components/common/HeaderComponent';
 import styles from '@/styles/header.module.scss';
 import Link from 'next/link';
 import { PiSealCheck } from 'react-icons/pi';
-import { SlLayers } from 'react-icons/sl';
+import { SlActionRedo, SlBubbles, SlLayers } from 'react-icons/sl';
 const About = (): JSX.Element => {
   return (
     <>
       <HeaderComponent
         rightElements={[
-          <Link key="feedback" href="/feedback" className={styles.box}>
-            <PiSealCheck />
-          </Link>,
-          <Link key="about" href="/about" className={styles.box}>
+          <Link key={'about'} href={'/about'} className={styles.box}>
             <SlLayers />
+            서비스소개
+          </Link>,
+          <Link key={'feedback'} href={'/feedback'} className={styles.box}>
+            <SlBubbles />
+            피드백
           </Link>,
         ]}
       />
@@ -28,9 +30,9 @@ const About = (): JSX.Element => {
                 서비스입니다.
               </p>
             </div>
-            <div className="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
+            <div className="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-10 -mx-2">
               <div className="p-2 sm:w-1/2 w-full">
-                <div className="bg-gray-100 rounded flex p-4 h-full items-center">
+                <div className="bg-gray-100 rounded flex p-4 h-full items-center ">
                   <svg
                     fill="none"
                     stroke="currentColor"
@@ -137,7 +139,7 @@ const About = (): JSX.Element => {
             <div className="p-2 text-center">
               <a
                 className="rounded-lg text-sm font-semibold py-3 px-4 bg-slate-900 text-white hover:bg-slate-700"
-                href="#"
+                href="https://github.com/namsan01"
                 target="_blank"
               >
                 GitHub
