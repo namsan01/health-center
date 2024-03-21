@@ -30,7 +30,7 @@ const Marker = ({ map, coordinates, icon, onClick }: Marker) => {
 
     // 지도 객체가 변화가 일어나면 처리하라
     // Dependency Array (의존성배열)
-  }, [map]);
+  }, [map, coordinates, icon, onClick]);
 
   // 네이버 마커 아이콘은 네이버가 랜더링합니다
   return null;

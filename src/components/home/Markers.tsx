@@ -1,5 +1,6 @@
 'use client';
 import { CITY_KEY } from '@/hooks/useInfo';
+import '@/styles/globals.css';
 
 import { Info } from '@/types/info';
 
@@ -52,16 +53,32 @@ const Markers = () => {
       })}
       {/* 만약 SWR 에 보관된 좌표가 있는 경우 */}
       {currentInfo && (
-        <Marker
-          map={map}
-          coordinates={currentInfo.coordinates}
-          icon={changeMarkerIcon(true)}
-          key={9999999999}
-          onClick={() => {
-            // 보관된 좌표를 지워라
-            clearCurrentInfo();
-          }}
-        />
+        <>
+          <Marker
+            map={map}
+            coordinates={currentInfo.coordinates}
+            icon={changeMarkerIcon(true)}
+            key={9999999999}
+            onClick={() => {
+              // 보관된 좌표를 지워라
+              clearCurrentInfo();
+            }}
+          />
+          <div className="markerInfo">
+            <div>
+              <h1 style={{ fontSize: '20px' }}>{currentInfo.centerName}</h1>
+              <h2>({currentInfo.centerNumber})</h2>
+            </div>
+
+            <h2>주소 : {currentInfo.address2}</h2>
+
+            <h2>
+              운영시간 : {currentInfo.startTime} ~ {currentInfo.endTime}
+            </h2>
+
+            <h2>진료과목 : {currentInfo.subject}</h2>
+          </div>
+        </>
       )}
     </>
   );

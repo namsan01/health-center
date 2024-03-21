@@ -11,6 +11,19 @@ export type Marker = {
   onClick: () => void;
 };
 
+export type MakrerInfo = {
+  centerName: string;
+  centerNumber: string;
+  map: NaverMap;
+  coordinates: Coordinates;
+  icon: ImageIcon;
+  address1: string;
+  address2: string;
+  startTime: string;
+  endTime: string;
+  onClick: () => void;
+};
+
 export type ImageIcon = {
   url: string;
   size: naver.maps.Size;
