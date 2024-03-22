@@ -1,14 +1,11 @@
 'use client';
-import { useState, useEffect } from 'react';
 import HeaderComponent from '@/components/common/HeaderComponent';
+import { useColletion } from '@/hooks/useCollection';
 import { useFirebase } from '@/hooks/useFirebase';
 import styles from '@/styles/header.module.scss';
 import Link from 'next/link';
-import { PiSealCheck } from 'react-icons/pi';
-import { SlActionRedo, SlBubbles, SlLayers } from 'react-icons/sl';
-import { useColletion } from '@/hooks/useCollection';
-import dayjs from 'dayjs';
-import { Timestamp } from 'firebase/firestore';
+import { useEffect, useState } from 'react';
+import { SlBubbles, SlHome, SlLayers } from 'react-icons/sl';
 
 // 등록하기 기능
 type FeedBack = {
@@ -108,6 +105,10 @@ const Feedback = (): JSX.Element => {
     <>
       <HeaderComponent
         rightElements={[
+          <Link key={'home'} href={'/'} className={styles.box}>
+            <SlHome />
+            지도
+          </Link>,
           <Link key={'about'} href={'/about'} className={styles.box}>
             <SlLayers />
             서비스소개

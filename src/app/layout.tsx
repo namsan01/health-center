@@ -5,6 +5,9 @@ import { ReactNode } from 'react';
 export const metadata: Metadata = {
   title: '전국 보건소 위치 안내',
   description: '전국 보건소 위치 안내',
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({

@@ -1,13 +1,16 @@
 import HeaderComponent from '@/components/common/HeaderComponent';
 import styles from '@/styles/header.module.scss';
 import Link from 'next/link';
-import { PiSealCheck } from 'react-icons/pi';
-import { SlActionRedo, SlBubbles, SlLayers } from 'react-icons/sl';
+import { SlBubbles, SlHome, SlLayers } from 'react-icons/sl';
 const About = (): JSX.Element => {
   return (
     <>
       <HeaderComponent
         rightElements={[
+          <Link key={'home'} href={'/'} className={styles.box}>
+            <SlHome />
+            지도
+          </Link>,
           <Link key={'about'} href={'/about'} className={styles.box}>
             <SlLayers />
             서비스소개
