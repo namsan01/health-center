@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://health-center-namsan01.vercel.app/
+
+# Sitemaps
+Sitemap: https://health-center-namsan01.vercel.app/sitemap.xml
