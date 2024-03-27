@@ -26,6 +26,10 @@ export default function RootLayout({
           name="google-site-verification"
           content="J3kl5yPvijVI-WopKTkM88UkxqCFQUV_ZPv99rIOjK8"
         />
+        <link
+          rel="canonical"
+          href="https://health-center-namsan01.vercel.app"
+        ></link>
       </head>
       <body>{children}</body>
     </html>
