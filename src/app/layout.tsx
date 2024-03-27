@@ -17,6 +17,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
+      <head>
+        <meta
+          name="naver-site-verification"
+          content="8f762eaed0d7fffd365512e6c027eeb9739ee50d"
+        />
+        <meta
+          name="google-site-verification"
+          content="J3kl5yPvijVI-WopKTkM88UkxqCFQUV_ZPv99rIOjK8"
+        />
+      </head>
       <body>{children}</body>
     </html>
   );
