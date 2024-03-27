@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import '@/styles/globals.css';
 import { ReactNode } from 'react';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 export const metadata: Metadata = {
   title: '전국 보건소 위치 안내',
@@ -30,6 +31,7 @@ export default function RootLayout({
           rel="canonical"
           href="https://health-center-namsan01.vercel.app"
         ></link>
+        <GoogleAnalytics gaId="G-JMJWC2ZQHQ" />
       </head>
       <body>{children}</body>
     </html>
